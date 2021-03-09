@@ -5,7 +5,7 @@ Docker environment for TEASER-plusplus
 
 - Docker-ce
 
-## Build docker
+## Building docker image
 
 For first time use, you need to build the docker image. The script is under `Docker/`
 
@@ -13,7 +13,7 @@ For first time use, you need to build the docker image. The script is under `Doc
 cd Docker/ && ./build_docker.sh
 ```
 
-Grab a tea and wait your computer to build the image.
+Grab a tea and wait for your computer to build the image.
 
 Or, you can `pull` the image from dockerhub by running
 
@@ -21,9 +21,9 @@ Or, you can `pull` the image from dockerhub by running
 docker pull biomotion/teaserpp:pcl-1.9.1
 ```
 
-## Running docker
+## Running container
 
-After you pull the docker image, you can now use scripts to navigate container and your pc.
+After you pull the docker image, you can now use scripts to navigate the container and your pc.
 
 ### First, setup the environment
 ```bash
@@ -43,7 +43,9 @@ Enter the container everywhere in your computer
 tpp-exec
 ```
 
-### Close the container
+You can leave the container by simply close the terminal or `exit`/`ctrl+D` to exit gently. Remember that the container is still running in background unless you [stop the container](#stop-the-container).
+
+### Stop the container
 ```bash
 tpp-stop-container
 ```
