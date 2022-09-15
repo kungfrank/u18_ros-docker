@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo docker ps
+sudo docker stop $CONTAINER_NAME
+sudo docker rm $CONTAINER_NAME
+echo "STOP CONTAINER"
+sudo docker ps

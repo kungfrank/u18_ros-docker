@@ -1,51 +1,42 @@
-# teaserpp-docker
-Docker environment for TEASER-plusplus
+# u18_ros-docker
+Docker environment for Ubuntu 18 + ROS Melodic + X11 output
 
 ## Requirements
-
 - Docker-ce
 
-## Building docker image
+## First, setup the environment
+```bash
+cd u18_ros-docker 
+echo 'source '$PWD'/environment.sh' >> ~/.bashrc
+```
 
-For first time use, you need to build the docker image. The script is under `Docker/`
-
+## Build a docker image. 
+Open a new terminal.
 ``` bash
-cd Docker/ && ./build_docker.sh
+cd Docker && \
+sudo ./build_docker.sh && \
+sudo docker image ls
 ```
 
-Grab a tea and wait for your computer to build the image.
-
-Or, you can `pull` the image from dockerhub by running
-
-```bash
-docker pull biomotion/teaserpp:pcl-1.9.1
+## Build a docker container
+``` bash
+u18-start-container
+sudo docker ps
 ```
 
-## Running container
-
-After you pull the docker image, you can now use scripts to navigate the container and your pc.
-
-### First, setup the environment
+## Execute the docker container
 ```bash
-source environment.sh
+u18-exec
+```
+You can leave the container by simply close the terminal or `exit`/`ctrl+D` to exit gently. Remember that the container is still running in background unless you [stop the container](#stop-and-delete-the-container).
+
+## Stop and delete the container
+```bash
+u18-stop-container
 ```
 
-Note: you should run this on every terminal opened later
-
-### Second, start the container
+## Delete image
 ```bash
-tpp-start-container
-```
-
-### Enter the container
-Enter the container everywhere in your computer
-```bash
-tpp-exec
-```
-
-You can leave the container by simply close the terminal or `exit`/`ctrl+D` to exit gently. Remember that the container is still running in background unless you [stop the container](#stop-the-container).
-
-### Stop the container
-```bash
-tpp-stop-container
+sudo docker image rm pckung/u18_ros
+sudo docker image ls
 ```
