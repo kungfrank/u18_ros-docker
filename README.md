@@ -35,7 +35,7 @@ You can leave the container by simply close the terminal or `exit`/`ctrl+D` to e
 u18-stop-container
 ```
 
-## Delete image
+## Delete the image
 ```bash
 sudo docker image rm pckung/u18_ros
 sudo docker image ls
